@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Misty Fight</title>
+</head>
+<body>
+    <div class="acceuil">
+        <div class="logo">
+            <img src="img/MystiFight_logo.png" alt="">
+        </div>
+        <div class="joueur">
+            <button class="joueur1" id="onePlayer">1 Player</button>
+            <button class="joueur2" id="twoPlayers">2 Players</button>
+        </div>
+    </div>
+    <div class="selection">
+        <div class="main">
+            <div class="choice1"></div>
+            <span class="vs">
+                <img src="img/vs.png" alt="">
+            </span>
+            <div class="choice2"></div>
+        </div>
+    
+        <div class="pokemons">
+            <div class="top">
+                <div class="tooltip">
+                    <img src="img/arceus.png">
+                    <span class="tooltiptext">Arceus</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/artikodin.png">
+                    <span class="tooltiptext">Artikodin</span>
+                </div>
+                
+                <div class="tooltip">
+                    <img src="img/darkrai.png">
+                    <span class="tooltiptext">Darkrai</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/dialga.png">
+                    <span class="tooltiptext">Dialga</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/dracaufeu.png">
+                    <span class="tooltiptext">Dracaufeu</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/electhor.png">
+                    <span class="tooltiptext">Electhor</span>
+                </div>
+    
+                <div class="tooltip" id="random">
+                    <img src="img/pokemon.png">
+                    <span class="tooltiptext">Aléatoire</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/entei.png">
+                    <span class="tooltiptext">Entei</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/giratina.png">
+                    <span class="tooltiptext">Giratina</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/groudon.png">
+                    <span class="tooltiptext">Groudon</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/ho-oh.png">
+                    <span class="tooltiptext">Ho-Oh</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/kyogre.png">
+                    <span class="tooltiptext">Kyogre</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/kyurem.png">
+                    <span class="tooltiptext">Kyurem</span>
+                </div>
+            </div>
+        
+            <div class="bottom">
+                <div class="tooltip">
+                    <img src="img/latias.png">
+                    <span class="tooltiptext">Latias</span>
+                </div>
+                
+                <div class="tooltip">
+                    <img src="img/latios.png">
+                    <span class="tooltiptext">Latios</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/lugia.png">
+                    <span class="tooltiptext">Lugia</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/mewtwo.png">
+                    <span class="tooltiptext">Mewtwo</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/palkia.png">
+                    <span class="tooltiptext">Palkia</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/raikou.png">
+                    <span class="tooltiptext">Raikou</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/rayquaza.png">
+                    <span class="tooltiptext">Rayquaza</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/reshiram.png">
+                    <span class="tooltiptext">Reshiram</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/suicune.png">
+                    <span class="tooltiptext">Suicune</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/sulfura.png">
+                    <span class="tooltiptext">Sulfura</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/xerneas.png">
+                    <span class="tooltiptext">Xerneas</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/yveltal.png">
+                    <span class="tooltiptext">Yveltal</span>
+                </div>
+        
+                <div class="tooltip">
+                    <img src="img/zekrom.png">
+                    <span class="tooltiptext">Zekrom</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
