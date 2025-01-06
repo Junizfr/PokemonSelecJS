@@ -21,6 +21,9 @@ const r = document.querySelector(':root');
 const onePlayer = document.getElementById('onePlayer');
 const twoPlayers = document.getElementById('twoPlayers');
 
+const choice1Name = document.getElementById('choice1Name');
+const choice2Name = document.getElementById('choice2Name');
+
 onePlayer.addEventListener('click', () => {
     players = 'onePlayer'
 })
@@ -50,14 +53,17 @@ pokemons.forEach(pokemon => {
             if(player1 === undefined) {
                 choice1.style.visibility = 'visible'
                 choice1.style.backgroundImage = `url('img/${pokemon.children[1].textContent.toLowerCase()}.png')`
+                choice1Name.innerText = pokemon.children[1].textContent
             }      
         } else if(players === 'twoPlayers') {
             if(player1 === undefined) {
                 choice1.style.visibility = 'visible'
                 choice1.style.backgroundImage = `url('img/${pokemon.children[1].textContent.toLowerCase()}.png')`
+                choice1Name.innerText = pokemon.children[1].textContent
             } else if(player2 === undefined) {
                 choice2.style.visibility = 'visible'
                 choice2.style.backgroundImage = `url('img/${pokemon.children[1].textContent.toLowerCase()}.png')`
+                choice2Name.innerText = pokemon.children[1].textContent
             }
         }
     })
@@ -74,12 +80,15 @@ pokemons.forEach(pokemon => {
                 event.target.style.border = '2px solid var(--player1)'
                 event.target.style.filter = 'drop-shadow(0 0 5px var(--player1))'
                 player1 = pokemon.children[1].textContent
+                choice1Name.innerText = pokemon.children[1].textContent
+
                 
                 const random = Math.floor(Math.random() * 25)
                 choice2.style.backgroundImage = `url('img/${Object.keys(listPokemons)[random]}.png')`
                 choice2.style.visibility = 'visible'
                 player2 = Object.keys(listPokemons)[random]
-                
+                choice2Name.innerText = pokemon.children[1].textContent
+
             }
         }
         
@@ -91,13 +100,16 @@ pokemons.forEach(pokemon => {
                 event.target.style.filter = 'drop-shadow(0 0 5px var(--player1))'
                 player1 = pokemon.children[1].textContent
                 r.style.setProperty('--hover', 'red')
+                choice1Name.innerText = pokemon.children[1].textContent
+
             }
             else if (player2 === undefined) {
                 choice2.style.backgroundImage = `url('img/${pokemon.children[1].textContent.toLowerCase()}.png')`
                 choice2.style.visibility = 'visible'
                 event.target.style.border = '2px solid var(--player2)'
                 event.target.style.filter = 'drop-shadow(0 0 5px var(--player2))'
-                player2 = pokemon.children[1].textContent
+                player2 = pokemon.children[1].textContent;
+                choice2Name.innerText = pokemon.children[1].textContent
             }
         }
     })
