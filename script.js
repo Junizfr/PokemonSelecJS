@@ -150,11 +150,13 @@ random.addEventListener('click', () => {
             choice1.style.backgroundImage = `url('img/${Object.keys(listPokemons)[random]}.png')`
             choice1.style.visibility = 'visible'
             player1 = Object.keys(listPokemons)[random]
+            choice1Name.innerText = Object.keys(listPokemons)[random].charAt(0).toUpperCase() + Object.keys(listPokemons)[random].slice(1)
             
             const random2 = Math.floor(Math.random() * 25)
             choice2.style.backgroundImage = `url('img/${Object.keys(listPokemons)[random2]}.png')`
             choice2.style.visibility = 'visible'
             player2 = Object.keys(listPokemons)[random2]
+            choice2Name.innerText = Object.keys(listPokemons)[random2].charAt(0).toUpperCase() + Object.keys(listPokemons)[random2].slice(1)
         }
     } 
     if(players === 'twoPlayers') {
@@ -163,11 +165,13 @@ random.addEventListener('click', () => {
             choice1.style.backgroundImage = `url('img/${Object.keys(listPokemons)[random]}.png')`
             choice1.style.visibility = 'visible'
             player1 = Object.keys(listPokemons)[random]
+            choice1Name.innerText = Object.keys(listPokemons)[random].charAt(0).toUpperCase() + Object.keys(listPokemons)[random].slice(1)
         } else if(player2 === undefined) {
             const random = Math.floor(Math.random() * 25)
             choice2.style.backgroundImage = `url('img/${Object.keys(listPokemons)[random]}.png')`
             choice2.style.visibility = 'visible'
             player2 = Object.keys(listPokemons)[random]
+            choice2Name.innerText = Object.keys(listPokemons)[random].charAt(0).toUpperCase() + Object.keys(listPokemons)[random].slice(1)
         }
     }
 })
