@@ -156,7 +156,7 @@ const listPokemons = {
     'entei': '6',
     'giratina': '7',
     'groudon': '8',
-    'ho-oh': '9',
+    'pikachu': '9',
     'kyogre': '10',
     'kyurem': '11',
     'latias': '12',
@@ -210,8 +210,9 @@ random.addEventListener('click', () => {
             choice1.style.visibility = 'visible'
             player1 = Object.keys(listPokemons)[random]
             choice1Name.innerText = Object.keys(listPokemons)[random].charAt(0).toUpperCase() + Object.keys(listPokemons)[random].slice(1)
-            
-            p1 = pokeClass.find(pokemon => {  
+        
+            p1 = pokeClass.find(pokemon => {
+                
                 if(pokemon.name === player1.charAt(0).toUpperCase() + player1.slice(1)) {
                     return pokemon
                 }
@@ -277,7 +278,7 @@ let electhor = new Pokemon("Electhor", "Électrik et Vol", 110, 120);
 let entei = new Pokemon("Entei", "Feu", 130, 150);
 let giratina = new Pokemon("Giratina", "Spectre et Dragon", 130, 130);
 let groudon = new Pokemon("Groudon", "Sol", 180, 120);
-let hooh = new Pokemon("Ho-Oh", "Feu et Vol", 130, 110);
+let hooh = new Pokemon("Pikachu", "Électrik", 70, 80);
 let kyogre = new Pokemon("Kyogre", "Eau", 130, 130);
 let kyurem = new Pokemon("Kyurem", "Dragon et Glace", 130, 120);
 let latias = new Pokemon("Latias", "Dragon et Psy", 110, 110);
