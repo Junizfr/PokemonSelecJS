@@ -11,6 +11,7 @@ body{
     background-image: url('img/fondpokentournament.jpeg');
     background-repeat: no-repeat;
     background-size: 100vw;
+    overflow: hidden;
 }
 .acceuil{
     width: 100%;
@@ -19,6 +20,11 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 10rem;
+    transition: transform 0.5s ease-in-out;
+    
+    &.hide {
+        transform: translateY(-100vh);
+    }
 }
 .logo{
     width: 100vh;
@@ -53,7 +59,7 @@ button {
     font-style: normal;
     font-size: 2rem;
     cursor: pointer;
-
+    
     &.back {
         width: 55px;
         background-color: transparent;
@@ -118,6 +124,7 @@ button {
 
 .pokemons {
     display: flex;
+    transition: transform 0.5s ease-in-out;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
@@ -129,15 +136,18 @@ button {
     left: 0;
     right: 0;
     font-family: "Barlow Condensed", serif;
-
-
+    
+    &.hide {
+        transform: translateY(100vh);
+    }
+    
     img {
         background-color: #171933;
         border: 2px solid white;
         width: 92px;
         height: 92px;
     }
-
+    
     img:hover {
         border: 2px solid var(--hover);
         filter: drop-shadow(0 0 5px var(--hover));
@@ -153,7 +163,7 @@ button {
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    
     .choice1 {
         visibility: hidden;
         background-image: url('img/mewtwo.png');
@@ -162,7 +172,7 @@ button {
         width: 768px;
         height: 768px;
         filter: drop-shadow(-2px 0 5px black);
-
+        
         p {
             visibility: hidden;
             position: absolute;
@@ -175,7 +185,7 @@ button {
             transform: translate(-50%, -50%);
             text-shadow: 2px 2px 2px black;
         }
-
+        
         h2 {
             position: absolute;
             font-family: 'Pokemon', sans-serif;
@@ -187,7 +197,7 @@ button {
             transform: translate(-50%, -50%);
             text-shadow: 2px 2px 2px black;
         }
-
+        
         .degats {
             position: absolute;
             font-family: 'Pokemon', sans-serif;
@@ -209,7 +219,7 @@ button {
         width: 768px;
         height: 768px;
         filter: drop-shadow(2px 0 5px black);
-
+        
         p {
             visibility: hidden;
             position: absolute;
@@ -222,7 +232,7 @@ button {
             transform: translate(-50%, -50%);
             text-shadow: 2px 2px 2px black;
         }
-
+        
         h2 {
             position: absolute;
             font-family: 'Pokemon', sans-serif;
@@ -234,7 +244,7 @@ button {
             transform: translate(-50%, -50%);
             text-shadow: 2px 2px 2px black;
         }
-
+        
         .degats {
             position: absolute;
             font-family: 'Pokemon', sans-serif;
@@ -247,7 +257,7 @@ button {
             text-shadow: 2px 2px 2px black;
         }
     }
-
+    
     .vs {
         filter: drop-shadow(0 0 5px black);
     }

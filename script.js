@@ -4,14 +4,19 @@ const acceuil = document.querySelector(".acceuil");
 const selection = document.querySelector(".selection");
 
 bouton1.addEventListener("click", () => {
-    acceuil.style.display = "none";
-    selection.style.display = "block";
-    
+    acceuil.classList.add("hide");
+    setTimeout(() => {
+        acceuil.style.display = "none";
+        selection.style.display = "block";
+    }, 500);
 });
+
 bouton2.addEventListener("click", () => {
-    acceuil.style.display = "none";
-    selection.style.display = "block";
-    
+    acceuil.classList.add("hide");
+    setTimeout(() => {
+        acceuil.style.display = "none";
+        selection.style.display = "block";
+    }, 500);
 });
 
 const pokemons = document.querySelectorAll('.tooltip')
@@ -84,7 +89,7 @@ pokemons.forEach(pokemon => {
                 event.target.style.filter = 'drop-shadow(0 0 5px var(--player1))'
                 player1 = pokemon.children[1].textContent
                 choice1Name.innerText = pokemon.children[1].textContent
-
+                
                 p1 = pokeClass.find(pokemon => {  
                     if(pokemon.name === player1.charAt(0).toUpperCase() + player1.slice(1)) {
                         return pokemon
@@ -96,13 +101,13 @@ pokemons.forEach(pokemon => {
                 choice2.style.visibility = 'visible'
                 player2 = Object.keys(listPokemons)[random].charAt(0).toUpperCase() + Object.keys(listPokemons)[random].slice(1)
                 choice2Name.innerText = Object.keys(listPokemons)[random].charAt(0).toUpperCase() + Object.keys(listPokemons)[random].slice(1)
-                            
+                
                 p2 = pokeClass.find(pokemon => {  
                     if(pokemon.name === player2.charAt(0).toUpperCase() + player2.slice(1)) {
                         return pokemon
                     }
                 })
-
+                
                 launchCombat();
                 
             }
@@ -133,13 +138,13 @@ pokemons.forEach(pokemon => {
                 event.target.style.filter = 'drop-shadow(0 0 5px var(--player2))'
                 player2 = pokemon.children[1].textContent;
                 choice2Name.innerText = pokemon.children[1].textContent
-
+                
                 p2 = pokeClass.find(pokemon => {  
                     if(pokemon.name === player2.charAt(0).toUpperCase() + player2.slice(1)) {
                         return pokemon
                     }
                 })
-
+                
                 launchCombat()
             }
         }
@@ -182,7 +187,7 @@ random.addEventListener('click', () => {
             choice1.style.visibility = 'visible'
             player1 = Object.keys(listPokemons)[random]
             choice1Name.innerText = Object.keys(listPokemons)[random].charAt(0).toUpperCase() + Object.keys(listPokemons)[random].slice(1)
-
+            
             p1 = pokeClass.find(pokemon => {  
                 if(pokemon.name === player1.charAt(0).toUpperCase() + player1.slice(1)) {
                     return pokemon
@@ -210,21 +215,21 @@ random.addEventListener('click', () => {
             choice1.style.visibility = 'visible'
             player1 = Object.keys(listPokemons)[random]
             choice1Name.innerText = Object.keys(listPokemons)[random].charAt(0).toUpperCase() + Object.keys(listPokemons)[random].slice(1)
-        
+            
             p1 = pokeClass.find(pokemon => {
                 
                 if(pokemon.name === player1.charAt(0).toUpperCase() + player1.slice(1)) {
                     return pokemon
                 }
             })
-
+            
         } else if(player2 === undefined) {
             const random = Math.floor(Math.random() * 25)
             choice2.style.backgroundImage = `url('img/${Object.keys(listPokemons)[random]}.png')`
             choice2.style.visibility = 'visible'
             player2 = Object.keys(listPokemons)[random]
             choice2Name.innerText = Object.keys(listPokemons)[random].charAt(0).toUpperCase() + Object.keys(listPokemons)[random].slice(1)
-
+            
             p2 = pokeClass.find(pokemon => {  
                 if(pokemon.name === player2.charAt(0).toUpperCase() + player2.slice(1)) {
                     return pokemon
@@ -306,7 +311,10 @@ const health2 = document.getElementById('health2')
 
 launchCombat = () => {
     if(p1 !== undefined && p2 !== undefined) {
-        document.querySelector('.pokemons').style.display = 'none'
+        document.querySelector(".pokemons").classList.add("hide");
+        setTimeout(() => {
+            document.querySelector(".pokemons").style.display = "none";
+        }, 500);
         health1.innerText = `${p1.hp} hp`
         health2.innerText = `${p2.hp} hp`
         health1.style.visibility = 'visible'
@@ -357,11 +365,13 @@ launchCombat = () => {
         setTimeout(() => {
             vs.children [0].src = `img/${p1.hp > 0 ? p1.name.toLowerCase() : p2.name.toLowerCase()}.png`
             pokemons.innerHTML = `Le Winner est ${p1.hp > 0 ? p1.name : p2.name}`
+            document.querySelector(".pokemons").classList.remove("hide");
+            document.querySelector(".pokemons").style.display = "flex";
             vs.children [0].style.width = '60rem'
             choice2.innerHTML = `
-                <button class="back">
-                    <img width="60" height="60" src="img/back.png" alt="back">
-                </button>
+            <button class="back">
+                <img width="60" height="60" src="img/back.png" alt="back">
+            </button>
             `
             choice2.style.display = 'flex'
             choice2.style.justifyContent = 'end' 
