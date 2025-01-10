@@ -29,6 +29,8 @@ const twoPlayers = document.getElementById('twoPlayers');
 const choice1Name = document.getElementById('choice1Name');
 const choice2Name = document.getElementById('choice2Name');
 
+let players = ''
+
 onePlayer.addEventListener('click', () => {
     players = 'onePlayer'
 })
@@ -36,9 +38,6 @@ onePlayer.addEventListener('click', () => {
 twoPlayers.addEventListener('click', () => {
     players = 'twoPlayers'
 })
-
-let players = ''
-
 
 const choice1 = document.querySelector('.choice1')
 const choice2 = document.querySelector('.choice2')
